@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_product_lwn_almntj",
+  "info": {
+    "displayName": "لون المنتج",
+    "icon": "brush"
+  },
+  "options": {},
+  "attributes": {
+    "color_name": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "color_code": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

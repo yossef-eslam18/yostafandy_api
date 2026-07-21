@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "alaqsams",
+  "info": {
+    "singularName": "alaqsam",
+    "pluralName": "alaqsams",
+    "displayName": "الأقسام"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "alanwaes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::alanwae.alanwae",
+      "mappedBy": "alaqsam"
+    }
+  }
+}

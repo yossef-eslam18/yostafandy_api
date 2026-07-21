@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "منتجات"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "product_name": {
+      "type": "string",
+      "default": "لانش بوكس هامر "
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "capacity": {
+      "type": "string"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::alanwae.alanwae",
+      "inversedBy": "products"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "stock": {
+      "type": "integer"
+    },
+    "colors": {
+      "type": "component",
+      "component": "product.lwn-almntj",
+      "repeatable": true
+    }
+  }
+}

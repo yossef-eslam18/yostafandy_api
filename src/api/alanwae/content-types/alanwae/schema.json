@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "alanwaes",
+  "info": {
+    "singularName": "alanwae",
+    "pluralName": "alanwaes",
+    "displayName": "الأنواع"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "alaqsam": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::alaqsam.alaqsam",
+      "inversedBy": "alanwaes"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product",
+      "mappedBy": "type"
+    },
+    "quantity": {
+      "type": "integer"
+    }
+  }
+}
