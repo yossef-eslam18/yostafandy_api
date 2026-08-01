@@ -1,21 +1,25 @@
-FROM node:18-alpine
+# استخدام Node 20 بناءً على متطلبات Strapi
+FROM node:20-alpine
 
-# Set working directory
+# تثبيت أدوات البناء الضرورية (Python, make, g++)
+RUN apk add --no-stdc++ --no-cache python3 make g++ gcc
+
+# تحديد مجلد العمل
 WORKDIR /opt/app
 
-# Install dependencies
+# نسخ ملفات الحزم وتثبيتها
 COPY package.json package-lock.json ./
-RUN npm install
+RUN npm ci
 
-# Copy project files
+# نسخ باقي ملفات المشروع
 COPY . .
 
-# Build Strapi admin panel
+# بناء لوحة تحكم Strapi
 ENV NODE_ENV=production
 RUN npm run build
 
-# Expose port
+# تحديد المنفذ
 EXPOSE 1337
 
-# Start Strapi
+# تشغيل المشروع
 CMD ["npm", "run", "start"]
